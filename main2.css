@@ -1,0 +1,319 @@
+
+
+/* Puedes añadir más estilos aquí para otros elementos */
+html, body {
+   margin: 0;
+   padding: 0;
+}
+*, *::before, *::after {
+   box-sizing: border-box;
+}
+/* este toca ver por q me mueve el menu para arriba */
+nav{
+   /*position: absolute;*/
+   z-index: 10;
+   width: 100%;
+   box-sizing: border-box;
+   left: 0;
+   right: 0;
+   top: 0;
+   padding: 20px 20px 18px !important;
+   /*font-family: Arial, Helvetica, sans-serif;
+   padding: 0 5%;
+   height: 150px;
+   background-color: rgb(224, 210, 210);*/
+}
+/* este mueve el menu para un lado */
+nav .logo{
+   float: left;
+   width: 40%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   font-size: 24px;
+   color: rgb(18, 148, 51);
+   font-weight: bold;
+   text-transform: uppercase;
+   border-radius: 7px;
+}
+
+
+@media (max-width:768px){
+   nav .logo{
+      float: none;
+      width: auto;
+      justify-content: center;
+   }
+   nav .list {
+      float: none;
+      position: fixed; /* este sirve para q se desplliegue el menu */
+      z-index: 9; /*  es una propiedad de CSS que sirve para controlar el orden de apilamiento de elementos que se superponen en una página web*/
+      left: 0;
+      right: 0;
+      top: 100px;
+      bottom: 100%;
+      width: auto;
+      height: auto;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: rgb(25, 189, 189);
+      overflow: hidden;
+      transition: all .5s ease-in-out;
+   }
+   nav .list a{
+      font-size: 20px;
+   }
+   nav :checked ~ .list{
+      bottom: 0;
+   }
+   nav .icon-bars {
+      display: block;
+   }
+}
+
+.container{
+   margin-top: 150px;
+}
+/* Comitttttt
+#wrap{
+
+   /* Propiedades adicionales para controlar cómo se ve la imagen */
+    /* background-size: cover;          /* Cubre todo el área sin distorsionar */
+     /*background-repeat: no-repeat;    /* Evita que la imagen se repita */
+    /* background-attachment: fixed;    /* La imagen permanece fija al hacer scroll */
+    /* background-position: center center; /* Centra la imagen
+}*/
+/*
+#bottom{
+   background-color: black;
+}*/
+/*
+.oe_unremovable{
+   display: block;
+}*/
+
+
+/* ===== ANIMACIÓN TARJETAS ===== */
+.card {
+    transition: all 0.35s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* efecto suave en la imagen */
+.card img {
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+/* ===== MÁS ESPACIO EN MÓVIL ===== */
+@media (max-width: 768px) {
+    .pt16 {
+        padding-top: 30px !important;
+    }
+
+    .pb16 {
+        padding-bottom: 30px !important;
+    }
+}
+/*
+.row {
+    clear: both;
+}
+
+.card {
+    position: relative;
+}*/
+/* ===== TARJETAS MÁS PEQUEÑAS ===== */
+.card {
+    max-width: 380px;   /* controla el ancho */
+    margin: 0 auto;     /* centra la card dentro de la columna */
+}
+
+.card-img-top {
+    max-height: 260px;  /* reduce altura de imagen */
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 12px;      /* menos espacio interno */
+}
+
+.card-title {
+    font-size: 14px;
+}
+
+/* Reducir espacio horizontal entre tarjetas */
+.s_three_columns .container {
+    max-width: 950px;   /* controla el ancho total de las imagenes  */
+    padding-left: 12px;
+    padding-right: 12px;
+}
+/* Este ubica la letra de las tarjetas */
+.card-title {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+/* FOOTER FULL WIDTH ABAJO */
+
+.footer-container {
+    width: 100%;          /* ocupa todo el ancho */
+    padding: 0 20px;      /* opcional, margen interno */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* el color y cosas del pie de pagina */
+.main-footer {
+    background-color: #000;
+    width: 100%;
+    padding: 25px 0;
+    color: rgb(238, 223, 238);
+}
+
+
+/* Logo del pie de pagina*/
+.footer-logo img {
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.6);
+}
+
+/* NAV el espacio de las letras en el pie de pagina*/
+.footer-nav {
+    display: flex;
+    gap: 25px;
+}
+/* sirve para darle el color a las letras del pie de pagina */
+.footer-nav a {
+    color: rgb(216, 20, 216);
+    text-decoration: none;
+    font-weight: 500;
+}
+/* este sirve para darle efecto a la letra */
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+/* no veo para q sirve*/
+.row:last-of-type {
+    margin-bottom: 0 !important;
+}
+/* al quitarlo me baja las imagenes un poquito
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}*/
+
+/*este es el css del menu con logo */
+/*El contenido crece para ocupar todo el espacio entre el nav y el footer - sube el pie de pagina si se quita  */
+/*.content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}*/
+
+/* 2. Estilos del Navegador (Transparente) */
+/* .navbar-custom {
+    background-color: transparent !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+}*/
+
+/*.list-links {
+    display: flex;
+    list-style: none;
+    gap: 25px; /*el espacio entre las letras 
+    margin: 0;
+    margin-left: auto;  <--- ESTA ES LA CLAVE 
+    padding-right: 75px; <--- Aumenta este número para alejarlo del borde derecho
+    color: #560858;
+}*/
+
+.logo {
+    margin-left: 9%; /* Aleja el logo un poco del borde izquierdo */
+}
+/* este sirve para darle todo el dinamismo al logo */
+.logo img {
+    height: 73px;
+    border-radius: 50%;
+    /* Crea un resplandor que parece luz neón */
+    box-shadow: 0 0 15px 5px #560858; 
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.5s ease;
+    animation: pulsoBrillo 2s infinite;
+}
+
+@keyframes pulsoBrillo {
+    0% { box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.4); }
+    50% { box-shadow: 0 0 20px 8px rgba(255, 0, 255, 0.7); }
+    100% { box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.4); }
+}
+
+
+
+/* El buscador corregido */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 6px 9px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(166, 43, 177, 0.2);
+    width: 400px;
+    max-width: 50%;
+    border: 1px solid #f0e0f5;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.search-button {
+    background-color: #a62bb1 !important;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-button svg {
+    width: 18px;
+    fill: #dfe6e7; /* Color cian de la lupa */
+}
+.search-button:hover {
+    background-color: #ff00ff !important;
+    transform: scale(1.1);
+}

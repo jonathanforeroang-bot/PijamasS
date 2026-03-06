@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pijamas</title>
+    <link rel="stylesheet" href="../static/main.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </form>
+   </div>   
+        <ul class="list"> 
+            <a href="http://127.0.0.1:5000/" style="border-bottom: none;"> <!-- style="border-bottom: none;" este sirve para quitarle una linea q aparece por defecto -->
+            <svg xmlns="http://www.w3.org/2000/svg" alt="Inicio"  height="45px" viewBox="0 -960 960 960" width="45px" fill="#0a0a0a"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+           </a>
+    </div>
+    </head>
+     
+<body>
+    <nav>
+        
+      
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login con Cuadro Adicional</title>
+    <link rel="stylesheet" href="../static/stile.css">
+</head>
+<body>
+    <div class="login-container">
+        <h5 class="card-title text center mb-4">Ingresa tus contactos, pronto nos comunicaremos con tigo</h5>
+        
+        <form action="http://127.0.0.1:80/mipijama/procesar.php" method="POST">
+            
+            <label for="email" class="form-label">E-mail</label>
+            <input type="text" name="email" placeholder="name@example.com">
+            
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" name="telefono" placeholder="+57">
+            
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" placeholder="Nombre">            
+            <button type="submit" >Continuar</button>
+        </form>
+    </div> 
+</body>
+
+        <div class="cuadro-adicional">
+            <p>Información adicional o instrucciones:</p>
+            <ul>
+                <li>Puedes crear una cuenta si no tienes una.</li>
+                <li>¿Olvidaste tu contraseña? Restablécela aquí.</li>
+                <li>Contacta a soporte para asistencia.</li>
+            </ul>
+        </div>
+    </div>
+
+ <script>
+        // Copia y pega AQUÍ la función validarContrasena(event) que te di antes.
+        function validarContrasena(event) {
+            // ... todo el código de la validación ...
+            const passwordInput = document.getElementById('password');
+            const password = passwordInput.value;
+            const errorDisplay = document.getElementById('error-password');
+            
+            // ... (resto de las RegEx y la lógica de errores) ...
+            
+            // Ejemplo básico, debes usar el código completo de las RegEx
+            // que te pasé en la respuesta anterior.
+            if (password.length < 10) { 
+                event.preventDefault(); 
+                errorDisplay.innerHTML = "❌ Contraseña demasiado corta.";
+                return false;
+            }
+            // Si todo es válido
+            errorDisplay.innerHTML = "";
+            return true; 
+        }
+    </script>
+</body>
+</html>
+<footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../static/Logo.jpg" alt="Logo JM">
+            </div>
+
+            <nav class="footer-nav">
+                <a href="#">Inicio</a>
+                <a href="layout2.html">Productos</a>
+                <a href="about.html">Contactenos</a>
+               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+                <a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo"><i class="fab fa-linkedin-in"></i></a>
+                
+                       
+        </div>
+    </footer>
+    <div>
+
+    

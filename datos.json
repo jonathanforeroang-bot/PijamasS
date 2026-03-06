@@ -1,0 +1,27 @@
+[
+  {
+    "titulo": "Pijamas",
+    "descripcion": "Pijamas suaves cómodas ropa dormir descanso noche mujer hombre algodón azul rosado",
+    "url": "layout2.html"
+  },
+  {
+    "titulo": "Babuchas",
+    "descripcion": "Babuchas pantuflas casa invierno cálidas mujer hombre cómodas",
+    "url": "babuchas.html"
+  },
+  {
+    "titulo": "Cobijas",
+    "descripcion": "Cobijas mantas suaves abrigadas cama invierno frío hogar",
+    "url": "cobijas.html"
+  },
+  {
+    "titulo": "niños",
+    "descripcion": "Pijamas suaves cómodas ropa dormir descanso noche mujer hombre algodón azul rosado",
+    "url": "niños.html"
+  },
+  {
+    "titulo": "niñas",
+    "descripcion": "Pijamas suaves cómodas ropa dormir descanso noche mujer hombre algodón azul rosado",
+    "url": "niños.html"
+  }
+]

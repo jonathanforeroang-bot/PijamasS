@@ -1,0 +1,616 @@
+/* 1. Reset de márgenes y altura completa */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* Contenedor principal - veo q me manda abajo el pie de pagina */
+
+/*El contenido crece para ocupar todo el espacio entre el nav y el footer - sube el pie de pagina si se quita  */
+.content {
+    flex: 10; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+}
+
+
+/* 2. Estilos del Navegador (Transparente) */
+.navbar-custom {
+    background-color: transparent !important;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+     display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.list-links {
+    display: flex;
+    list-style: none;
+    gap: 25px; /*el espacio entre las letras */
+    margin: 0;
+    margin-left: auto; /* <--- ESTA ES LA CLAVE */
+    padding-right: 75px; /* <--- Aumenta este número para alejarlo del borde derecho */
+    color: #560858;
+}
+.nav-link {
+    text-decoration: none;
+    color: #f0e8f0; /* Cambiado a blanco para que se vea sobre la imagen */
+    font-weight: bold;
+  
+}
+.list-links li a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    color: #560858;
+}
+
+.list-links li a:hover {
+    color: #ff00ff; /* El color fucsia de tu logo */
+    text-shadow: 0 0 10px #ff00ff; /* Efecto neón */
+}
+/* 3. SECCIÓN HERO (La que tiene la imagen) */
+.hero-section {
+    flex: 1; /* CLAVE: Esto hace que la imagen rellene el espacio blanco */
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: 10px !important; /* Estaba probablemente en 60px o más */
+    margin-top: -10px; /* Un truco para forzarla a subir un poco más */
+    /* Quitamos el height fijo de 60vh para que el flex:1 funcione */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(248, 245, 245);
+    text-align: center;
+}
+
+/* 4. EL FOOTER */
+.main-footer {
+    background-color: #0f0d0d;
+    color: rgb(238, 223, 238);
+    padding: 10px 0;
+    width: 100%;
+    margin-top: 0; /* Asegura que no haya huecos arriba */
+}
+
+.footer-container {
+    max-width: 1200px;
+    color: #f5ecf5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    padding-right: 75px; /* <--- Aumenta este número para alejarlo del borde derecho */
+}
+
+.footer-logo img {
+   height: 80px;
+   border-radius: 60%;
+   box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.6);
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.footer-logo{
+    padding-left: 75px; /* <--- Aumenta este número para alejarlo del borde derecho */
+}
+
+.footer-nav a {
+    color: rgb(216, 20, 216);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+
+p .btn-lg{
+   background-color: rgb(236, 98, 238);
+   color: rgb(241, 239, 239);
+   padding: 10px 20px;
+   border-radius: 12%;/* este modifica el boton catalago*/
+   text-decoration: none;
+   border: none;       /* Quita cualquier borde sólido */
+   outline: none;      /* Quita el resaltado azul al hacer clic */
+   display: inline-block;
+   margin-top: 10px;
+}
+
+.logo img {
+    height: 80px;
+   border-radius: 60%;
+   box-shadow: 0 0 15px 5px #560858;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.logo {
+    margin-left: 9%; /* Aleja el logo un poco del borde izquierdo */
+}
+
+p .btn-lg {
+    display: inline-block;
+    background: linear-gradient(45deg, #560858, #8b008b); /* Gradiente morado */
+    color: #ffffff;
+    padding: 15px 35px;
+    border-radius: 50px; /* Bordes redondeados para un look moderno */
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    transition: all 0.4s ease; /* Suaviza todos los cambios */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra de profundidad */
+    cursor: pointer;
+    outline: none;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+p .btn-lg:hover {
+    background: linear-gradient(45deg, #8b008b, #ebddeb); /* El color se vuelve más vivo */
+    transform: translateY(-3px) scale(1.05); /* Sube un poco y crece */
+    box-shadow: 0 0 20px rgba(156, 70, 156, 0.6); /* Brillo neón */
+    color: #fff;
+    border-color: #ff00ff;
+}
+
+/* Efecto al hacer clic */
+p .btn-lg:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px #560858;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Tamaño grande y llamativo */
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease; /* Animación de entrada */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Animación para que el texto aparezca suavemente */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1{
+   text-shadow: 3px 3px 9px #560858;/*le cambia el color ala letra principal*/
+   color: #560858;
+}
+
+.features-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10px;
+    background: #fff; /* Fondo blanco para que el texto descanse la vista */
+    text-align: center;
+    margin-top: 60px;
+}
+
+.feature-item h4 {
+    color: #560858; /* El morado de tu marca */
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9rem;
+    max-width: 200px;
+}
+
+.icon {
+    font-size: 2rem; /* Tamaño de los iconos */
+}
+p{
+   text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.5);
+   color: #0e0d0e;
+   
+}
+
+/* --- EFECTO DE BRILLO PARA EL LOGO --- */
+.logo img {
+    height: 73px;
+    border-radius: 50%;
+    /* Crea un resplandor que parece luz neón */
+    box-shadow: 0 0 15px 5px #560858; 
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.5s ease;
+    animation: pulsoBrillo 2s infinite;
+}
+
+@keyframes pulsoBrillo {
+    0% { box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.4); }
+    50% { box-shadow: 0 0 20px 8px rgba(255, 0, 255, 0.7); }
+    100% { box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.4); }
+}
+
+
+
+.btn-small:hover {
+    background: #560858;
+    color: white;
+}
+
+
+/* El brillo del logo que querías */
+.logo img {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.6);
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+
+/* este es el css del carrusel */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+}
+
+.slider {
+  max-width: 1000px; /* este modifica el ancho del slider */
+  margin: 50px auto;
+  position: relative;
+  background: white;
+  padding: 1px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.slide img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.text h4 {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.text h2 {
+  margin: 0;
+  color: #a528a5;
+}
+
+.text p {
+  margin: 15px 0;
+  color: #555;
+}
+
+.stars {
+  color: #f4b400;
+  font-size: 20px;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/*El logo de Whatsapp*/
+.whatsapp-btn img {
+    width: 35px; /* Ajusta el tamaño del logo */
+    height: 35px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.1); /* Crece un poquito al pasar el mouse */
+}
+/* Estilos para los enlaces del footer */
+.footer-nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Color específico para los ICONOS de redes sociales */
+.footer-nav a i {
+    color: #ffffff; /* Esto los pondrá blancos */
+    font-size: 22px; /* Un poco más grandes para que se vean bien */
+}
+
+/* Efecto al pasar el mouse por encima */
+.footer-nav a i:hover {
+    color: #ff00ff; /* Cambia a fucsia (como tus letras) al pasar el mouse */
+}
+@media (max-width: 600px) {
+    /* El header ahora se organiza de arriba hacia abajo */
+    header, .header-container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* El menú de Inicio/Productos/Contactanos ahora en fila pero con espacio */
+    .footer-nav, .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+@media (max-width: 600px) {
+    /* Si usas clases como .container o .feature-item */
+    .feature-item, .slide-content {
+        display: flex;
+        flex-direction: column !important; /* Fuerza a que se pongan uno abajo del otro */
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Ajuste para que las fotos de las babuchas y modelos se vean grandes */
+    .slide-content img, .feature-item img {
+        width: 90% !important;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /* Ajuste de textos para que no se amontonen */
+    .text, .slide-text {
+        width: 100% !important;
+        padding: 10px;
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .btn-coleccion, button {
+        width: 80%; /* Un poco más ancho en móvil para que sea fácil de tocar */
+        font-size: 16px;
+    }
+}
+/* Media query para móviles (menos de 600px) */
+@media (max-width: 600px) {
+    
+    /* 1. Forzamos al header a ser una columna */
+    .header-container, 
+    header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 10px 0 !important;
+        gap: 15px !important;
+    }
+
+    /* 2. El logo ya no debe flotar, debe estar centrado */
+    .footer-logo img, 
+    .header-logo img {
+        max-width: 120px; /* Un poco más pequeño para que no robe espacio */
+        margin-bottom: 5px;
+    }
+
+    /* 3. El buscador debe ocupar casi todo el ancho */
+    input[type="text"], 
+    .search-bar {
+        width: 80% !important;
+        margin: 0 auto !important;
+    }
+    
+
+    /* 4. El menú de Inicio/Productos/Contactanos */
+    .footer-nav, 
+    .header-nav {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Si no caben, saltan de línea */
+        justify-content: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .footer-nav a, 
+    .header-nav a {
+        font-size: 14px !important; /* Letra un poco más pequeña para que quepa */
+        margin: 0 5px !important;
+    }
+}
+
+
+/*Buscador*/
+/* Contenedor principal que centra todo en vertical */
+.navbar-personalizada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Estilo del Logo con el resplandor de tu imagen */
+.mi-logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.4); /* Resplandor rosa/morado */
+    margin-bottom: 20px;
+}
+
+/* El buscador corregido */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 6px 9px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(166, 43, 177, 0.2);
+    width: 400px;
+    max-width: 50%;
+    border: 1px solid #f0e0f5;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.search-button {
+    background-color: #a62bb1 !important;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-button svg {
+    width: 18px;
+    fill: #dfe6e7; /* Color cian de la lupa */
+}
+.search-button:hover {
+    background-color: #ff00ff !important;
+    transform: scale(1.1);
+}
+/* El menú de abajo */
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-links li {
+    margin: 5px 0;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu-links li a:hover {
+    color: #a62bb1;
+}
+.wrapper {
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block; /* O flex, pero asegúrate que no tenga 'height: 100vh' */
+}
+
+/* Color para los títulos de resultados */
+.resultado-item a {
+    color: #a62bb1 !important; /* El morado de tu marca */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Color cuando pasas el mouse por encima */
+.resultado-item a:hover {
+    color: #ff00ff !important; /* Rosa brillante al tocarlo */
+}
+
