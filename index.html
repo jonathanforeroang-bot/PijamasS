@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pijamas</title>
+    <link rel="stylesheet" href="../static/stilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<style>
+/* Contenedor principal horizontal */
+.navbar-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5%; /* Reducido de 20px a 5px para que sea delgada */
+    background-color: #fff;
+    
+    margin-bottom: 0px; /* Aseguramos que no empuje lo de abajo */
+}
+/* Secciones individuales */
+.nav-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del Logo */
+.logo-circular {
+    width: 60px; /* Un poco más pequeño ayuda a subir todo */
+    
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    object-fit: cover;
+}
+/* Buscador Estilizado */
+.search-bar {
+  position: relative; /* OBLIGATORIO */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    padding: 2px 15px; /* Menos relleno interno */
+    box-shadow: 0 4px 12px rgba(166, 43, 177, 0.15);
+    border: 1px solid #eee;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.search-btn {
+    background: #a62bb1;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.search-btn svg {
+    width: 16px;
+    fill: #00e5ff;
+}
+
+/* Menú Horizontal */
+.nav-menu {
+    display: flex; /* Hace que el menú sea horizontal */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Espacio entre palabras */
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #a62bb1; /* Morado como tus botones */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #ff00ff;
+}
+/* 4. IMPORTANTE: El contenedor del contenido de abajo */
+/* Asegúrate de que lo que sigue después del nav no tenga un margin-top gigante */
+.container, .main-content {
+    margin-top: 10px !important; 
+    padding-top: 0px !important;
+}
+/* Contenedor de resultados para que flote sobre el contenido */
+#resultados {
+    position: absolute; /*este deja la posicion del buscador central*/
+    top: 13%; /* Esto lo pone justo debajo del buscador */
+    left: auto; /* Lo movemos al centro */
+    /* width: 100% !important;  Se ajusta al mismo ancho del buscador */
+    background: white;/* este sirve para darle el color debajo cuando se busca algo */
+    border-radius: 0 0 15px 15px; /* Redondeado solo abajo para que encaje */
+    box-shadow: 0 10px 25px rgba(62, 11, 66, 0.2);
+    z-index: 1000; /* Para que pase por encima de las letras de "Descansa..." */
+    margin-top: 2px;/* Pequeño espacio para que no esté pegado */
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid #fcf9f9;
+}
+
+/* La tarjeta de cada producto */
+.resultado-card {
+    padding: 12px 15px;
+    border-bottom: 1px solid #fff0f6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.resultado-card:hover {
+    background-color: #fdf5ff; /* Color lila muy suave al pasar el mouse */
+}
+
+/* Cambiamos el azul por tu morado de marca */
+.resultado-card h4 a {
+   color: #ff1493 !important; /* Rosa fuerte (Deep Pink) */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.resultado-card h4 a:hover {
+    color: #ff00ff !important; /* Rosa cuando lo tocas */
+}
+
+.resultado-card p {
+    color: #888;
+    font-size: 0.85rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.no-results {
+    padding: 15px;
+    color: #999;
+    text-align: center;
+}
+/* Para que esto funcione, el contenedor del buscador debe tener: */
+.search-container {
+    position: relative; /* Esto es OBLIGATORIO para que el hijo se ubique bien */
+    display: flex;
+    align-items: center;
+}
+
+/* Cambiamos el color azul por tu morado elegante */
+.resultado-card h4 a {
+    color: #a62bb1 !important;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <nav class="navbar-custom">
+        <div class="logo">
+            <a href="http://127.0.0.1:5000/">
+                <img src="../static/Logo.jpg" width="100" height="100" alt="JM" class="logo-img">
+           </a>
+        </div>
+<form class="search-container" onsubmit="buscar(event)">
+    <input type="text" id="searchInput" placeholder="Buscar..." class="search-input">
+    <button type="submit" class="search-button">🔍</button>
+</form>
+
+<div id="resultados"></div>
+<div class="nav-section links-sec">
+        <ul class="nav-menu">
+            <li><a href="http://127.0.0.1:5000">Inicio</a></li>
+            <li><a href="layout2.html">Productos</a></li>
+            <li><a href="about.html">Contáctanos</a></li>
+        </ul>
+      </div>
+    </nav>
+</div>
+    <main class="content">
+         <div class="container">
+            <div class="container1">
+        <section class="hero-section">
+            <div class="hero-overlay">
+                <h1 class="display-5">Descansa como mereces, cada noche.</h1>
+                <p class="subtitle">Pijamas premium, cobijas y babuchas diseñadas para tu comodidad absoluta.</p>
+             <p><a href="layout2.html" class="btn btn-primary btn-lg">Ver colección</a></p>   
+<div class="slider">
+  <div class="slides">
+    <div class="slide active">
+      <div class="slide-content">
+        <img src="../static/imagen08.jpeg" alt="Cliente 1">
+        <div class="text">
+          <h2>El descanso empieza por tus pies</h2>
+          <p>Consiente tus pies con estas babuchas: diseño increíble y máximo abrigo para tu hogar.</p>
+          <a href="babuchas.html" class="slide-link">Comprar babuchas</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-content">
+        <img src="../static/Imagen04.jpeg" alt="Cliente 2">
+        <div class="text">
+          <h2>Pijamas que abrazan tu descanso</h2>
+          <p>Dormir bien nunca tuvo tanto estilo. Pijamas con diseños encantadores y telas ultra suaves..</p>
+          <a href="layout2.html" class="slide-link">Ver pijamas</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-content">
+        <img src="../static/cojines.jpg" alt="Cliente 3">
+        <div class="text">
+          <h2>Cobijas que te envuelven en suavidad</h2>
+          <p>El abrazo que tu descanso necesita: cobijas de suavidad infinita y diseño impecable.</p>
+          <a href="cobijas.html" class="slide-link">Ver cobijas</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="slide">
+      <div class="slide-content">
+        <img src="../static/cojines.jpg" alt="Cliente 4">
+        <div class="text">
+          <h4>DETALLE DE CALIDAD</h4>
+          <p>Haz de tu cama el refugio más cálido. Nuestras cobijas combinan diseños hermosos con la textura más suave para tus noches de frío.</p>
+          <a href="/detalles-producto" class="slide-link">Ver más detalles</a>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>-->
+
+  </div>
+
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+</div>
+
+<script src="../static/script.js"></script>
+</body>
+
+
+</html>
+                <div class="features-bar">
+    <div class="feature-item">
+        <span class="icon">☁️</span>
+        <h4>Calidad Premium</h4>
+        <p>Telas hipoalergénicas y extra suaves.</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon">🚀</span>
+        <h4>Envíos Rápidos</h4>
+        <p>Entregas seguras en 24-48 horas.</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon">💖</span>
+        <h4>Hecho con Amor</h4>
+        <p>Diseños exclusivos para tu familia.</p>
+    </div>
+</div>
+            </div>
+
+        
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../static/Logo.jpg" alt="Logo JM">
+            </div>
+
+            <nav class="footer-nav">
+                <a href="#">Inicio</a>
+                <a href="layout2.html">Productos</a>
+                <a href="about.html">Contactenos</a>
+               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">  
+                <a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo"><i class="fab fa-linkedin-in"></i></a>
+                
+            </nav>            
+        </div>
+    </footer>
+</div>
+<a href="https://wa.me/573195907427?text=Hola,%20me%20interesa%20ver%20el%20catálogo" class="whatsapp-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+<script>
+async function buscar(e) {
+    e.preventDefault();
+    
+    let query = document.getElementById("searchInput").value.toLowerCase();
+    let contenedor = document.getElementById("resultados");
+    
+    // Si el buscador está vacío, limpiamos y no hacemos nada
+    if (query.trim() === "") {
+        contenedor.innerHTML = "";
+        return;
+    }
+
+    let response = await fetch("static/datos.json");
+    let datos = await response.json();
+
+    let resultados = datos.filter(item =>
+        item.titulo.toLowerCase().includes(query) ||
+        item.descripcion.toLowerCase().includes(query)
+    );
+
+    contenedor.innerHTML = "";
+
+    if(resultados.length === 0){
+        contenedor.innerHTML = "<div class='no-results'>No se encontraron resultados</div>";
+        return;
+    }
+
+    // AQUÍ ESTÁ EL CAMBIO PRINCIPAL:
+    resultados.forEach(item => {
+        contenedor.innerHTML += `
+            <div class="resultado-card">
+                <div class="resultado-info">
+                    <h4><a href="${item.url}">${item.titulo}</a></h4>
+                    <p>${item.descripcion}</p>
+                </div>
+            </div>
+        `;
+    });
+}
+</script>
+
+</body>
+</html>
