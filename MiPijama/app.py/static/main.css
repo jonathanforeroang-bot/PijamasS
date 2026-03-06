@@ -1,0 +1,204 @@
+/* FOOTER FULL WIDTH ABAJO */
+.main-footer {
+    background-color: #000;
+    width: 100%;
+    padding: 25px 0;
+    color: rgb(238, 223, 238);
+}
+
+.footer-container {
+    width: 100%;          /* ocupa todo el ancho */
+    padding: 0 20px;      /* opcional, margen interno */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+/* LOGO */
+.footer-logo img {
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.6);
+}
+
+/* NAV */
+.footer-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-nav a {
+    color: rgb(216, 20, 216);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.row:last-of-type {
+    margin-bottom: 0 !important;
+}
+/*este es el css del menu con logo */
+/*El contenido crece para ocupar todo el espacio entre el nav y el footer - sube el pie de pagina si se quita  */
+.content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Estilos del Navegador (Transparente) */
+.navbar-custom {
+    background-color: transparent !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.list-links {
+    display: flex;
+    list-style: none;
+    gap: 25px; /*el espacio entre las letras */
+    margin: 0;
+    margin-left: auto; /* <--- ESTA ES LA CLAVE */
+    padding-right: 75px; /* <--- Aumenta este número para alejarlo del borde derecho */
+    color: #560858;
+}
+.nav-link {
+    text-decoration: none;
+    color: #f0e8f0; /* Cambiado a blanco para que se vea sobre la imagen */
+    font-weight: bold;
+  
+}
+.list-links li a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    color: #560858;
+}
+
+.list-links li a:hover {
+    color: #ff00ff; /* El color fucsia de tu logo */
+    text-shadow: 0 0 10px #ff00ff; /* Efecto neón */
+}
+.logo {
+    margin-left: 9%; /* Aleja el logo un poco del borde izquierdo */
+}
+.logo img {
+    height: 73px;
+    border-radius: 50%;
+    /* Crea un resplandor que parece luz neón */
+    box-shadow: 0 0 15px 5px #560858; 
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.5s ease;
+    animation: pulsoBrillo 2s infinite;
+}
+
+@keyframes pulsoBrillo {
+    0% { box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.4); }
+    50% { box-shadow: 0 0 20px 8px rgba(255, 0, 255, 0.7); }
+    100% { box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.4); }
+}
+/*este sirve para bajar el menu de fotos 
+.container1{
+   margin-top: 50px;
+}*/
+
+.py-5{
+    margin-top: 90px;
+}
+
+/*Productos*/
+
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}*/
+
+.titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 4 arriba */
+    gap: 10px;
+    padding-bottom: 80px; /* 👈 espacio abajo */
+    margin-top: 120px;
+}
+
+.producto {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 83%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    object-fit: cover;  /* 👈 ESTA es la razón */
+}
+
+.descripcion {
+    font-size: 14px;
+    color: #555;
+}
+
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.tallas {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+}

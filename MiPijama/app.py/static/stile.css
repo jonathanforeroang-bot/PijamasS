@@ -1,0 +1,96 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fefefe; /* Fondo claro similar a tu imagen */
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgb(250, 250, 250);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 8px rgba(22, 21, 22, 0.1);
+    text-align: left;
+    max-width: 400px; /* Ajusta el ancho si es necesario */
+}
+
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 20px); /* Ancho completo menos padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Para incluir padding en el ancho */
+}
+
+.login-container button {
+    background-color: #9b9191; /* Color gris del botón en tu imagen */
+    color: #080707;
+    padding: 10px 20px;
+    border: 1px solid #0a0a0a; /* Borde similar al de tu imagen */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%; /* Botón de ancho completo */
+    box-sizing: border-box;
+}
+
+.login-container button:hover {
+    background-color: #d0d0d0;
+}
+
+/* Estilos para el nuevo cuadro */
+.cuadro-adicional {
+    background-color: #f9f9f9; /* Un color ligeramente diferente para distinguirlo */
+    padding: 20px;
+    margin-top: 25px; /* Espacio entre el formulario y el nuevo cuadro */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.cuadro-adicional p {
+    margin: 0 0 10px 0;
+}
+
+.cuadro-adicional ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+h2{
+  text-align: center;
+}
+
+.login-container.button{
+  text-align: left; 
+
+}
+ul{
+    text-align: center;
+}
+a{
+    text-align: left;
+    border-bottom: 3px solid rgb(114, 8, 117);
+    
+}
+
+.list a{
+    text-decoration: none !important;
+}
+
+svg {
+  padding: 1px;
+  margin-left: 350px;
+  border-bottom: 1px solid rgb(114, 8, 117);
+  transition: transform 0.3s ease-in-out;
+}
